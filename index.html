@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardião da Atmosfera - Combate à Poluição Química</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'eco-green': '#22C55E',
+                        'eco-blue': '#3B82F6', 
+                        'eco-light-blue': '#87CEEB',
+                        'pollution-red': '#EF4444',
+                        'pollution-orange': '#F97316',
+                        'earth-brown': '#92400E'
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'pollutant': 'pollutant 8s linear infinite',
+                        'pulse-slow': 'pulse 3s infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes pollutant {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(calc(100vw + 100px)); }
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #22C55E 0%, #3B82F6 50%, #87CEEB 100%);
+        }
+        .pollution-gradient {
+            background: linear-gradient(to right, #EF4444, #F97316, #FDE047);
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-sans">
+    
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl md:text-3xl font-bold gradient-bg bg-clip-text text-transparent">
+                    🛡️ Guardião da Atmosfera
+                </h1>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#intro" class="hover:text-eco-green transition-colors">Introdução</a>
+                    <a href="#historia" class="hover:text-eco-green transition-colors">História</a>
+                    <a href="#aplicacoes" class="hover:text-eco-green transition-colors">Aplicações</a>
+                    <a href="#jogo" class="hover:text-eco-green transition-colors">Jogo</a>
+                    <a href="#experimentos" class="hover:text-eco-green transition-colors">Experimentos</a>
+                    <a href="#quiz" class="hover:text-eco-green transition-colors">Quiz</a>
+                </nav>
+                <button id="menuToggle" class="md:hidden p-2">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed top-16 left-0 w-full bg-white dark:bg-gray-900 shadow-lg z-40 hidden">
+        <nav class="container mx-auto px-4 py-4 space-y-4">
+            <a href="#intro" class="block hover:text-eco-green transition-colors">Introdução</a>
+            <a href="#historia" class="block hover:text-eco-green transition-colors">História</a>
+            <a href="#aplicacoes" class="block hover:text-eco-green transition-colors">Aplicações</a>
+            <a href="#jogo" class="block hover:text-eco-green transition-colors">Jogo</a>
+            <a href="#experimentos" class="block hover:text-eco-green transition-colors">Experimentos</a>
+            <a href="#quiz" class="block hover:text-eco-green transition-colors">Quiz</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-20 gradient-bg text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 animate-float">
+                Combate à Poluição Química
+            </h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                Aprenda sobre os guardiões químicos que protegem nossa atmosfera e torne-se um defensor do meio ambiente!
+            </p>
+            <a href="#intro" class="bg-white text-eco-green px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors">
+                Começar Missão 🚀
+            </a>
+        </div>
+    </section>
+
+    <!-- Introdução -->
+    <section id="intro" class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-eco-green">Introdução Conceitual</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Principais Poluentes Atmosféricos</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md">
+                            <h4 class="font-bold text-pollution-red">CO₂ - Dióxido de Carbono</h4>
+                            <p>Principal responsável pelo efeito estufa e aquecimento global.</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md">
+                            <h4 class="font-bold text-pollution-orange">NOx - Óxidos de Nitrogênio</h4>
+                            <p>Contribuem para formação de smog e chuva ácida.</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md">
+                            <h4 class="font-bold text-yellow-600">SOx - Óxidos de Enxofre</h4>
+                            <p>Principais causadores da chuva ácida e problemas respiratórios.</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md">
+                            <h4 class="font-bold text-purple-600">CFCs - Clorofluorcarbonos</h4>
+                            <p>Destroem a camada de ozônio que nos protege da radiação UV.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-center">Ciclo dos Poluentes</h3>
+                    <div id="pollutionCycle" class="h-64 relative overflow-hidden rounded-lg bg-gradient-to-b from-eco-light-blue to-eco-green">
+                        <div class="absolute bottom-0 w-full h-16 bg-earth-brown rounded-b-lg"></div>
+                        <div class="absolute bottom-16 left-4 text-xs bg-pollution-red text-white px-2 py-1 rounded animate-pollutant">CO₂</div>
+                        <div class="absolute bottom-20 left-8 text-xs bg-pollution-orange text-white px-2 py-1 rounded animate-pollutant" style="animation-delay: 1s;">NOx</div>
+                        <div class="absolute bottom-24 left-12 text-xs bg-yellow-600 text-white px-2 py-1 rounded animate-pollutant" style="animation-delay: 2s;">SOx</div>
+                        <div class="absolute top-4 left-1/2 transform -translate-x-1/2 text-yellow-400 text-3xl animate-pulse">☀️</div>
+                        <div class="absolute top-12 right-4 text-blue-300 animate-float">☁️</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold mb-6">A Química Como Guardiã</h3>
+                <p class="text-lg leading-relaxed">
+                    A química ambiental é nossa principal aliada na luta contra a poluição atmosférica. Através de reações de neutralização, 
+                    catálise e absorção, conseguimos transformar substâncias nocivas em compostos inofensivos, protegendo nossa atmosfera 
+                    e garantindo um futuro sustentável para as próximas gerações.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contexto Histórico -->
+    <section id="historia" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-eco-blue">Contexto Histórico</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <div class="absolute left-1/2 transform -translate-x-0.5 w-1 h-full bg-eco-green"></div>
+                    
+                    <div class="timeline-item mb-8">
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8 text-right">
+                                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                                    <h3 class="text-xl font-bold text-pollution-red">1980s</h3>
+                                    <h4 class="font-bold mb-2">Descoberta do Buraco na Camada de Ozônio</h4>
+                                    <p>Cientistas descobrem que os CFCs estão destruindo a camada de ozônio sobre a Antártida.</p>
+                                </div>
+                            </div>
+                            <div class="w-8 h-8 bg-pollution-red rounded-full border-4 border-white dark:border-gray-900 z-10"></div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item mb-8">
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8"></div>
+                            <div class="w-8 h-8 bg-eco-green rounded-full border-4 border-white dark:border-gray-900 z-10"></div>
+                            <div class="w-1/2 pl-8">
+                                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                                    <h3 class="text-xl font-bold text-eco-green">1987</h3>
+                                    <h4 class="font-bold mb-2">Protocolo de Montreal</h4>
+                                    <p>Acordo internacional para eliminar substâncias que destroem a camada de ozônio.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item mb-8">
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8 text-right">
+                                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                                    <h3 class="text-xl font-bold text-eco-blue">1997</h3>
+                                    <h4 class="font-bold mb-2">Protocolo de Kyoto</h4>
+                                    <p>Primeiro acordo global com metas obrigatórias para redução de gases do efeito estufa.</p>
+                                </div>
+                            </div>
+                            <div class="w-8 h-8 bg-eco-blue rounded-full border-4 border-white dark:border-gray-900 z-10"></div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item mb-8">
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8"></div>
+                            <div class="w-8 h-8 bg-green-600 rounded-full border-4 border-white dark:border-gray-900 z-10"></div>
+                            <div class="w-1/2 pl-8">
+                                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                                    <h3 class="text-xl font-bold text-green-600">2015</h3>
+                                    <h4 class="font-bold mb-2">Acordo de Paris</h4>
+                                    <p>195 países se comprometem a limitar o aquecimento global a 1,5°C.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-eco-light-blue/20 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4 text-center">💭 Reflexão</h3>
+                    <blockquote class="text-center italic text-lg">
+                        "A Terra não é herança de nossos pais, mas um empréstimo de nossos filhos."
+                        <br><br>
+                        <cite class="font-bold">— Provérbio Indígena Americano</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aplicações Práticas -->
+    <section id="aplicacoes" class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-eco-green">Aplicações Práticas</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">🚗</div>
+                    <h3 class="text-xl font-bold mb-4 text-eco-green">Catalisadores Automotivos</h3>
+                    <p>Convertem gases tóxicos (CO, NOx, HC) em substâncias menos nocivas (CO₂, N₂, H₂O) através de reações químicas catalisadas.</p>
+                    <div class="mt-4 text-sm bg-eco-green/20 p-3 rounded">
+                        <strong>Reação:</strong> 2CO + O₂ → 2CO₂
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">🏭</div>
+                    <h3 class="text-xl font-bold mb-4 text-eco-blue">Captura de CO₂</h3>
+                    <p>Tecnologias que capturam dióxido de carbono diretamente das chaminés industriais ou do ar atmosférico.</p>
+                    <div class="mt-4 text-sm bg-eco-blue/20 p-3 rounded">
+                        <strong>Método:</strong> Absorção química com aminas
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">🌫️</div>
+                    <h3 class="text-xl font-bold mb-4 text-purple-600">Tratamento de Gases</h3>
+                    <p>Sistemas de lavagem e filtragem que removem poluentes dos gases industriais antes da liberação na atmosfera.</p>
+                    <div class="mt-4 text-sm bg-purple-600/20 p-3 rounded">
+                        <strong>Exemplo:</strong> Ca(OH)₂ + SO₂ → CaSO₃ + H₂O
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">🧪</div>
+                    <h3 class="text-xl font-bold mb-4 text-yellow-600">Neutralização Química</h3>
+                    <p>Uso de compostos básicos para neutralizar chuva ácida e outros poluentes ácidos no meio ambiente.</p>
+                    <div class="mt-4 text-sm bg-yellow-600/20 p-3 rounded">
+                        <strong>Processo:</strong> Base + Ácido → Sal + Água
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 max-w-4xl mx-auto bg-white dark:bg-gray-700 p-8 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-6 text-center">🔬 Inovações Tecnológicas</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="text-3xl mb-3">⚡</div>
+                        <h4 class="font-bold mb-2">Fotocatálise</h4>
+                        <p class="text-sm">Uso da luz solar para acelerar reações de decomposição de poluentes.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl mb-3">🌿</div>
+                        <h4 class="font-bold mb-2">Biorremedição</h4>
+                        <p class="text-sm">Organismos vivos que naturalmente degradam contaminantes ambientais.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl mb-3">💨</div>
+                        <h4 class="font-bold mb-2">Filtros Avançados</h4>
+                        <p class="text-sm">Nanomateriais que capturam partículas microscópicas e gases tóxicos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jogo Interativo -->
+    <section id="jogo" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-eco-green">🎮 Missão: Defesa da Atmosfera</h2>
+            
+            <div class="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6">
+                <div class="grid lg:grid-cols-4 gap-6">
+                    <!-- Game Stats -->
+                    <div class="lg:col-span-1">
+                        <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+                            <h3 class="font-bold mb-4 text-center">Status da Missão</h3>
+                            <div class="space-y-3">
+                                <div>
+                                    <span class="text-sm">Energia Verde:</span>
+                                    <div class="flex items-center">
+                                        <span id="gameEnergy" class="font-bold text-eco-green">100</span>
+                                        <span class="text-eco-green ml-1">⚡</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-sm">Pontuação:</span>
+                                    <div class="font-bold text-eco-blue" id="gameScore">0</div>
+                                </div>
+                                <div>
+                                    <span class="text-sm">Nível de Poluição:</span>
+                                    <div class="w-full bg-gray-300 rounded-full h-3 mt-1">
+                                        <div id="pollutionBar" class="bg-pollution-red h-3 rounded-full transition-all duration-300" style="width: 0%"></div>
+                                    </div>
+                                    <span id="pollutionLevel" class="text-xs">0%</span>
+                                </div>
+                                <div>
+                                    <span class="text-sm">Onda:</span>
+                                    <div class="font-bold" id="gameWave">1</div>
+                                </div>
+                            </div>
+
+                            <div class="mt-6">
+                                <h4 class="font-bold mb-3">Defesas Disponíveis:</h4>
+                                <div class="space-y-2">
+                                    <button class="defense-btn w-full p-2 bg-eco-green text-white rounded hover:bg-green-600 transition-colors text-sm" data-type="catalyst" data-cost="20">
+                                        🔬 Catalisador (20⚡)
+                                    </button>
+                                    <button class="defense-btn w-full p-2 bg-eco-blue text-white rounded hover:bg-blue-600 transition-colors text-sm" data-type="absorber" data-cost="30">
+                                        🌿 Absorvedor CO₂ (30⚡)
+                                    </button>
+                                    <button class="defense-btn w-full p-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition-colors text-sm" data-type="neutralizer" data-cost="25">
+                                        ⚗️ Neutralizador (25⚡)
+                                    </button>
+                                    <button class="defense-btn w-full p-2 bg-yellow-600 text-white rounded hover:bg-yellow-700 transition-colors text-sm" data-type="filter" data-cost="15">
+                                        🔘 Filtro (15⚡)
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 space-y-2">
+                                <button id="startGame" class="w-full bg-eco-green text-white p-3 rounded font-bold hover:bg-green-600 transition-colors">
+                                    🚀 Iniciar Missão
+                                </button>
+                                <button id="pauseGame" class="w-full bg-yellow-600 text-white p-3 rounded font-bold hover:bg-yellow-700 transition-colors" disabled>
+                                    ⏸️ Pausar
+                                </button>
+                                <button id="resetGame" class="w-full bg-pollution-red text-white p-3 rounded font-bold hover:bg-red-600 transition-colors">
+                                    🔄 Reiniciar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Game Canvas -->
+                    <div class="lg:col-span-3">
+                        <div id="gameCanvas" class="relative w-full h-96 bg-gradient-to-b from-eco-light-blue to-eco-green rounded-lg overflow-hidden cursor-crosshair">
+                            <!-- Atmospheric Layers -->
+                            <div class="absolute top-0 w-full h-1/4 bg-gradient-to-b from-blue-300 to-blue-400 opacity-50">
+                                <div class="text-center text-white font-bold pt-2 text-sm">Estratosfera</div>
+                            </div>
+                            <div class="absolute top-1/4 w-full h-1/4 bg-gradient-to-b from-blue-400 to-blue-500 opacity-50">
+                                <div class="text-center text-white font-bold pt-2 text-sm">Troposfera</div>
+                            </div>
+                            <div class="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-earth-brown to-eco-green opacity-30">
+                                <div class="text-center text-white font-bold pt-2 text-sm">Superfície Terrestre</div>
+                            </div>
+
+                            <!-- Game elements will be dynamically added here -->
+                            <div id="pollutants" class="absolute inset-0"></div>
+                            <div id="defenses" class="absolute inset-0"></div>
+                            <div id="effects" class="absolute inset-0"></div>
+                        </div>
+
+                        <div class="mt-4 text-center">
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                Clique no campo para posicionar defesas e proteger a atmosfera dos poluentes!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Instructions -->
+                <div class="mt-6 bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+                    <h3 class="font-bold mb-3">📋 Como Jogar:</h3>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <h4 class="font-bold mb-2">Objetivo:</h4>
+                            <p>Impeça que os poluentes (CO₂, NOx, SOx, CFCs) atravessem suas defesas e contaminem a atmosfera.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Defesas:</h4>
+                            <ul class="space-y-1">
+                                <li>🔬 <strong>Catalisador:</strong> Eficaz contra CO e NOx</li>
+                                <li>🌿 <strong>Absorvedor CO₂:</strong> Especialista em carbono</li>
+                                <li>⚗️ <strong>Neutralizador:</strong> Combate SOx e ácidos</li>
+                                <li>🔘 <strong>Filtro:</strong> Remove partículas pequenas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experimentos -->
+    <section id="experimentos" class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-eco-blue">🧪 Experimentos Práticos</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-pollution-red">⚗️ Simulação de Chuva Ácida</h3>
+                    <div class="mb-4">
+                        <h4 class="font-bold mb-2">Materiais:</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Vinagre branco (ácido acético)</li>
+                            <li>• Giz ou casca de ovo</li>
+                            <li>• Recipiente transparente</li>
+                            <li>• Lupa (opcional)</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold mb-2">Procedimento:</h4>
+                        <ol class="text-sm space-y-1 list-decimal list-inside">
+                            <li>Coloque o giz no recipiente</li>
+                            <li>Despeje vinagre sobre o giz</li>
+                            <li>Observe a reação (formação de bolhas)</li>
+                            <li>Compare com rochas na natureza</li>
+                        </ol>
+                    </div>
+                    <div class="bg-pollution-red/20 p-3 rounded">
+                        <p class="text-sm"><strong>Explicação:</strong> O ácido acético simula a chuva ácida, corroendo o carbonato de cálcio do giz.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-eco-green">🌿 Filtragem de Partículas</h3>
+                    <div class="mb-4">
+                        <h4 class="font-bold mb-2">Materiais:</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Garrafa pet cortada</li>
+                            <li>• Algodão</li>
+                            <li>• Areia fina</li>
+                            <li>• Carvão ativado</li>
+                            <li>• Água com terra/tinta</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold mb-2">Procedimento:</h4>
+                        <ol class="text-sm space-y-1 list-decimal list-inside">
+                            <li>Monte filtro em camadas na garrafa</li>
+                            <li>Despeje água suja lentamente</li>
+                            <li>Observe a água filtrada</li>
+                            <li>Compare eficiência das camadas</li>
+                        </ol>
+                    </div>
+                    <div class="bg-eco-green/20 p-3 rounded">
+                        <p class="text-sm"><strong>Explicação:</strong> Demonstra como filtros industriais removem partículas poluentes do ar.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-eco-blue">💨 Produção de CO₂</h3>
+                    <div class="mb-4">
+                        <h4 class="font-bold mb-2">Materiais:</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Bicarbonato de sódio</li>
+                            <li>• Vinagre</li>
+                            <li>• Garrafa com bexiga</li>
+                            <li>• Balança (opcional)</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold mb-2">Procedimento:</h4>
+                        <ol class="text-sm space-y-1 list-decimal list-inside">
+                            <li>Coloque bicarbonato na garrafa</li>
+                            <li>Adicione vinagre rapidamente</li>
+                            <li>Feche com bexiga imediatamente</li>
+                            <li>Observe o enchimento da bexiga</li>
+                        </ol>
+                    </div>
+                    <div class="bg-eco-blue/20 p-3 rounded">
+                        <p class="text-sm"><strong>Explicação:</strong> Reação produz CO₂, demonstrando como este gás é gerado em processos químicos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-600 p-6 rounded">
+                <h3 class="font-bold text-yellow-800 dark:text-yellow-200 mb-2">⚠️ Alertas de Segurança</h3>
+                <ul class="text-yellow-700 dark:text-yellow-300 text-sm space-y-1">
+                    <li>• Sempre faça experimentos com supervisão de um adulto</li>
+                    <li>• Use óculos de proteção quando disponível</li>
+                    <li>• Trabalhe em área ventilada</li>
+                    <li>• Lave as mãos após os experimentos</li>
+                    <li>• Descarte materiais de forma adequada</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-eco-green">🎯 Quiz: Teste Seus Conhecimentos</h2>
+            
+            <div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8">
+                <div id="quizContainer">
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm font-bold">Questão <span id="questionNumber">1</span> de <span id="totalQuestions">10</span></span>
+                            <span class="text-sm">Pontuação: <span id="quizScore" class="font-bold text-eco-green">0</span></span>
+                        </div>
+                        <div class="w-full bg-gray-300 rounded-full h-2">
+                            <div id="progressBar" class="bg-eco-green h-2 rounded-full transition-all duration-300" style="width: 10%"></div>
+                        </div>
+                    </div>
+
+                    <div id="questionContainer" class="mb-8">
+                        <h3 id="questionText" class="text-xl font-bold mb-6">Carregando pergunta...</h3>
+                        <div id="answersContainer" class="space-y-3">
+                            <!-- Answers will be dynamically inserted here -->
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between">
+                        <button id="prevQuestion" class="bg-gray-500 text-white px-6 py-3 rounded font-bold hover:bg-gray-600 transition-colors" disabled>
+                            ← Anterior
+                        </button>
+                        <button id="nextQuestion" class="bg-eco-green text-white px-6 py-3 rounded font-bold hover:bg-green-600 transition-colors" disabled>
+                            Próxima →
+                        </button>
+                    </div>
+                </div>
+
+                <div id="quizResults" class="hidden text-center">
+                    <h3 class="text-2xl font-bold mb-6">🎉 Quiz Finalizado!</h3>
+                    <div class="text-6xl mb-4" id="resultEmoji">🎯</div>
+                    <p class="text-xl mb-6">Sua pontuação: <span id="finalScore" class="font-bold text-eco-green">0</span>/100</p>
+                    <div id="resultMessage" class="text-lg mb-6 p-4 rounded"></div>
+                    <button id="restartQuiz" class="bg-eco-green text-white px-8 py-3 rounded font-bold hover:bg-green-600 transition-colors">
+                        🔄 Refazer Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conexões Interdisciplinares -->
+    <section id="interdisciplinar" class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-eco-blue">🌐 Conexões Interdisciplinares</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">🌍</div>
+                    <h3 class="text-xl font-bold mb-4 text-eco-blue">Geografia</h3>
+                    <ul class="text-sm space-y-2 text-left">
+                        <li>• Distribuição global de poluentes</li>
+                        <li>• Mudanças climáticas regionais</li>
+                        <li>• Padrões de vento e dispersão</li>
+                        <li>• Ilhas de calor urbanas</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">🧬</div>
+                    <h3 class="text-xl font-bold mb-4 text-eco-green">Biologia</h3>
+                    <ul class="text-sm space-y-2 text-left">
+                        <li>• Efeitos na saúde humana</li>
+                        <li>• Impactos na biodiversidade</li>
+                        <li>• Bioacumulação de toxinas</li>
+                        <li>• Adaptações evolutivas</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold mb-4 text-purple-600">Física</h3>
+                    <ul class="text-sm space-y-2 text-left">
+                        <li>• Radiação solar e efeito estufa</li>
+                        <li>• Termodinâmica atmosférica</li>
+                        <li>• Propriedades da luz UV</li>
+                        <li>• Transferência de energia</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">🌱</div>
+                    <h3 class="text-xl font-bold mb-4 text-green-600">Educação Ambiental</h3>
+                    <ul class="text-sm space-y-2 text-left">
+                        <li>• Sustentabilidade global</li>
+                        <li>• Pegada ecológica</li>
+                        <li>• Políticas ambientais</li>
+                        <li>• Consciência ambiental</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 max-w-4xl mx-auto bg-white dark:bg-gray-700 p-8 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-6 text-center">🔗 Abordagem Holística</h3>
+                <p class="text-lg leading-relaxed text-center">
+                    A química ambiental não existe isoladamente. Ela se conecta com diversas áreas do conhecimento, 
+                    formando uma rede complexa de interações que nos ajuda a compreender melhor os desafios ambientais 
+                    e desenvolver soluções mais eficazes e sustentáveis para proteger nosso planeta.
+                </p>
+                
+                <div class="mt-8 grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="text-3xl mb-3">🧠</div>
+                        <h4 class="font-bold mb-2">Pensamento Sistêmico</h4>
+                        <p class="text-sm">Compreender interações complexas entre sistemas naturais e humanos.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl mb-3">🤝</div>
+                        <h4 class="font-bold mb-2">Colaboração</h4>
+                        <p class="text-sm">Unir diferentes áreas para soluções inovadoras e eficazes.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl mb-3">🎯</div>
+                        <h4 class="font-bold mb-2">Ação Integrada</h4>
+                        <p class="text-sm">Aplicar conhecimentos diversos em projetos ambientais reais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section id="curiosidades" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-eco-green">🔍 Curiosidades e Avanços Recentes</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 text-eco-blue">🚀 Tecnologias Emergentes</h3>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-eco-green pl-4">
+                                <h4 class="font-bold">Captura Direta de Ar (DAC)</h4>
+                                <p class="text-sm">Máquinas gigantes que sugam CO₂ diretamente da atmosfera, como "aspiradores de carbono"!</p>
+                            </div>
+                            <div class="border-l-4 border-eco-blue pl-4">
+                                <h4 class="font-bold">Fotossíntese Artificial</h4>
+                                <p class="text-sm">Cientistas criaram folhas artificiais que convertem CO₂ em combustível usando apenas luz solar.</p>
+                            </div>
+                            <div class="border-l-4 border-purple-600 pl-4">
+                                <h4 class="font-bold">Nanopartículas Inteligentes</h4>
+                                <p class="text-sm">Robôs microscópicos que detectam e neutralizam poluentes específicos no ar.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 text-pollution-orange">🌍 Projetos de Geoengenharia</h3>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-pollution-orange pl-4">
+                                <h4 class="font-bold">Gestão da Radiação Solar</h4>
+                                <p class="text-sm">Espelhos espaciais e aerossóis estratosféricos para refletir luz solar e resfriar o planeta.</p>
+                            </div>
+                            <div class="border-l-4 border-eco-green pl-4">
+                                <h4 class="font-bold">Alcalinização Oceânica</h4>
+                                <p class="text-sm">Adicionar minerais aos oceanos para aumentar sua capacidade de absorver CO₂.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 text-eco-green">🔬 Descobertas Recentes</h3>
+                        <div class="space-y-4">
+                            <div class="bg-eco-green/10 p-4 rounded">
+                                <h4 class="font-bold">🧪 Super-Enzimas</h4>
+                                <p class="text-sm">Enzimas modificadas que degradam plásticos 6x mais rápido que na natureza.</p>
+                            </div>
+                            <div class="bg-eco-blue/10 p-4 rounded">
+                                <h4 class="font-bold">🌊 Espuma de Grafeno</h4>
+                                <p class="text-sm">Material mais leve que o ar capaz de absorver 900x seu peso em petróleo.</p>
+                            </div>
+                            <div class="bg-purple-600/10 p-4 rounded">
+                                <h4 class="font-bold">🦋 Efeito Borboleta Químico</h4>
+                                <p class="text-sm">Descoberta de como pequenas mudanças químicas causam grandes impactos climáticos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-eco-green to-eco-blue text-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-4">💡 Você Sabia?</h3>
+                        <div class="space-y-3 text-sm">
+                            <p>🌳 Uma única árvore absorve cerca de 22 kg de CO₂ por ano!</p>
+                            <p>⚡ A energia renovável cresce 5x mais rápido que combustíveis fósseis.</p>
+                            <p>🔄 90% dos materiais podem ser reciclados com as tecnologias atuais.</p>
+                            <p>🌱 Plantas aquáticas podem absorver metais pesados da água poluída.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-6">🎯 O Futuro da Química Ambiental</h3>
+                    <p class="text-lg leading-relaxed">
+                        Estamos na era dourada da inovação ambiental! Cada descoberta nos aproxima mais de um mundo 
+                        onde a química trabalha em harmonia com a natureza, criando soluções sustentáveis e eficazes 
+                        para os desafios do século XXI. O futuro é verde, inteligente e cheio de possibilidades!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 gradient-bg bg-clip-text text-transparent">🛡️ Guardião da Atmosfera</h3>
+                    <p class="text-gray-300 text-sm">
+                        Educação em Química Ambiental para um futuro sustentável.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">📚 Referências</h4>
+                    <ul class="text-sm space-y-2 text-gray-300">
+                        <li>• IPCC Climate Reports</li>
+                        <li>• EPA Environmental Data</li>
+                        <li>• Nature Chemistry Journal</li>
+                        <li>• Green Chemistry Principles</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">🔗 Links Úteis</h4>
+                    <ul class="text-sm space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-eco-green transition-colors">• Portal do Meio Ambiente</a></li>
+                        <li><a href="#" class="hover:text-eco-green transition-colors">• NASA Climate Kids</a></li>
+                        <li><a href="#" class="hover:text-eco-green transition-colors">• Greenpeace Brasil</a></li>
+                        <li><a href="#" class="hover:text-eco-green transition-colors">• WWF Mundial</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">📧 Contato</h4>
+                    <div class="text-sm space-y-2 text-gray-300">
+                        <p>Email: contato@guardiaodaatmosfera.edu</p>
+                        <p>Sugestões e feedback são bem-vindos!</p>
+                    </div>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-eco-green transition-colors">🌐</a>
+                        <a href="#" class="text-2xl hover:text-eco-green transition-colors">📱</a>
+                        <a href="#" class="text-2xl hover:text-eco-green transition-colors">📧</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 Guardião da Atmosfera. Desenvolvido para fins educacionais. 🌍 Juntos por um planeta mais limpo!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode setup
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Game variables
+        let gameState = {
+            running: false,
+            paused: false,
+            energy: 100,
+            score: 0,
+            pollution: 0,
+            wave: 1,
+            pollutants: [],
+            defenses: [],
+            selectedDefense: null,
+            gameLoop: null
+        };
+
+        const pollutantTypes = {
+            co2: { name: 'CO₂', color: 'bg-pollution-red', speed: 2, health: 2, damage: 10 },
+            nox: { name: 'NOx', color: 'bg-pollution-orange', speed: 3, health: 1, damage: 8 },
+            sox: { name: 'SOx', color: 'bg-yellow-600', speed: 1.5, health: 3, damage: 12 },
+            cfc: { name: 'CFC', color: 'bg-purple-600', speed: 2.5, health: 2, damage: 15 }
+        };
+
+        const defenseTypes = {
+            catalyst: { name: '🔬', cost: 20, damage: 3, range: 80, effective: ['co2', 'nox'] },
+            absorber: { name: '🌿', cost: 30, damage: 5, range: 60, effective: ['co2'] },
+            neutralizer: { name: '⚗️', cost: 25, damage: 4, range: 70, effective: ['sox'] },
+            filter: { name: '🔘', cost: 15, damage: 2, range: 100, effective: ['nox', 'cfc'] }
+        };
+
+        // Game functions
+        function startGame() {
+            gameState.running = true;
+            gameState.paused = false;
+            document.getElementById('startGame').disabled = true;
+            document.getElementById('pauseGame').disabled = false;
+            
+            if (!gameState.gameLoop) {
+                gameState.gameLoop = setInterval(gameUpdate, 100);
+            }
+            
+            spawnPollutants();
+        }
+
+        function pauseGame() {
+            gameState.paused = !gameState.paused;
+            document.getElementById('pauseGame').textContent = gameState.paused ? '▶️ Continuar' : '⏸️ Pausar';
+        }
+
+        function resetGame() {
+            gameState = {
+                running: false,
+                paused: false,
+                energy: 100,
+                score: 0,
+                pollution: 0,
+                wave: 1,
+                pollutants: [],
+                defenses: [],
+                selectedDefense: null,
+                gameLoop: null
+            };
+            
+            if (gameState.gameLoop) {
+                clearInterval(gameState.gameLoop);
+                gameState.gameLoop = null;
+            }
+            
+            document.getElementById('pollutants').innerHTML = '';
+            document.getElementById('defenses').innerHTML = '';
+            document.getElementById('effects').innerHTML = '';
+            
+            document.getElementById('startGame').disabled = false;
+            document.getElementById('pauseGame').disabled = true;
+            document.getElementById('pauseGame').textContent = '⏸️ Pausar';
+            
+            updateGameUI();
+        }
+
+        function spawnPollutants() {
+            if (!gameState.running || gameState.paused) return;
+            
+            const types = Object.keys(pollutantTypes);
+            const type = types[Math.floor(Math.random() * types.length)];
+            const pollutant = {
+                id: Date.now() + Math.random(),
+                type: type,
+                x: -50,
+                y: Math.random() * 300 + 50,
+                health: pollutantTypes[type].health,
+                ...pollutantTypes[type]
+            };
+            
+            gameState.pollutants.push(pollutant);
+            createPollutantElement(pollutant);
+            
+            setTimeout(spawnPollutants, Math.max(1000 - gameState.wave * 100, 300));
+        }
+
+        function createPollutantElement(pollutant) {
+            const element = document.createElement('div');
+            element.id = `pollutant-${pollutant.id}`;
+            element.className = `absolute w-8 h-8 ${pollutant.color} rounded-full flex items-center justify-center text-white text-xs font-bold transition-all`;
+            element.style.left = `${pollutant.x}px`;
+            element.style.top = `${pollutant.y}px`;
+            element.textContent = pollutant.name;
+            
+            document.getElementById('pollutants').appendChild(element);
+        }
+
+        function createDefenseElement(defense) {
+            const element = document.createElement('div');
+            element.id = `defense-${defense.id}`;
+            element.className = 'absolute w-12 h-12 bg-eco-green rounded-full flex items-center justify-center text-2xl cursor-pointer hover:scale-110 transition-transform';
+            element.style.left = `${defense.x - 24}px`;
+            element.style.top = `${defense.y - 24}px`;
+            element.textContent = defense.icon;
+            
+            // Add range indicator
+            const range = document.createElement('div');
+            range.className = 'absolute border-2 border-eco-green border-opacity-30 rounded-full pointer-events-none';
+            range.style.width = `${defense.range * 2}px`;
+            range.style.height = `${defense.range * 2}px`;
+            range.style.left = `${defense.x - defense.range}px`;
+            range.style.top = `${defense.y - defense.range}px`;
+            
+            document.getElementById('defenses').appendChild(element);
+            document.getElementById('defenses').appendChild(range);
+        }
+
+        function gameUpdate() {
+            if (!gameState.running || gameState.paused) return;
+            
+            // Update pollutants
+            gameState.pollutants.forEach((pollutant, index) => {
+                pollutant.x += pollutant.speed;
+                
+                const element = document.getElementById(`pollutant-${pollutant.id}`);
+                if (element) {
+                    element.style.left = `${pollutant.x}px`;
+                }
+                
+                // Check if pollutant reached the end
+                if (pollutant.x > window.innerWidth) {
+                    gameState.pollution += pollutant.damage;
+                    gameState.pollutants.splice(index, 1);
+                    if (element) element.remove();
+                }
+            });
+            
+            // Defense attacks
+            gameState.defenses.forEach(defense => {
+                gameState.pollutants.forEach((pollutant, pIndex) => {
+                    const distance = Math.sqrt(
+                        Math.pow(defense.x - pollutant.x, 2) + 
+                        Math.pow(defense.y - pollutant.y, 2)
+                    );
+                    
+                    if (distance <= defense.range) {
+                        const effectiveness = defense.effective.includes(pollutant.type) ? 2 : 1;
+                        pollutant.health -= defense.damage * effectiveness;
+                        
+                        if (pollutant.health <= 0) {
+                            gameState.score += 10 * effectiveness;
+                            gameState.energy += 5;
+                            gameState.pollutants.splice(pIndex, 1);
+                            const element = document.getElementById(`pollutant-${pollutant.id}`);
+                            if (element) element.remove();
+                            
+                            // Create explosion effect
+                            createEffect(pollutant.x, pollutant.y, '💥');
+                        }
+                    }
+                });
+            });
+            
+            updateGameUI();
+            
+            // Check game over conditions
+            if (gameState.pollution >= 100) {
+                gameOver();
+            }
+            
+            // Check wave progression
+            if (gameState.pollutants.length === 0 && gameState.score > gameState.wave * 100) {
+                gameState.wave++;
+            }
+        }
+
+        function createEffect(x, y, emoji) {
+            const effect = document.createElement('div');
+            effect.className = 'absolute text-2xl animate-ping';
+            effect.style.left = `${x}px`;
+            effect.style.top = `${y}px`;
+            effect.textContent = emoji;
+            
+            document.getElementById('effects').appendChild(effect);
+            setTimeout(() => effect.remove(), 1000);
+        }
+
+        function updateGameUI() {
+            document.getElementById('gameEnergy').textContent = gameState.energy;
+            document.getElementById('gameScore').textContent = gameState.score;
+            document.getElementById('gameWave').textContent = gameState.wave;
+            document.getElementById('pollutionLevel').textContent = `${gameState.pollution}%`;
+            document.getElementById('pollutionBar').style.width = `${gameState.pollution}%`;
+        }
+
+        function gameOver() {
+            gameState.running = false;
+            clearInterval(gameState.gameLoop);
+            gameState.gameLoop = null;
+            
+            alert(`Game Over! Sua pontuação: ${gameState.score}`);
+            resetGame();
+        }
+
+        // Defense selection and placement
+        document.querySelectorAll('.defense-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const type = e.target.dataset.type;
+                const cost = parseInt(e.target.dataset.cost);
+                
+                if (gameState.energy >= cost) {
+                    gameState.selectedDefense = { type, cost };
+                    document.querySelectorAll('.defense-btn').forEach(b => b.classList.remove('ring-2', 'ring-eco-green'));
+                    e.target.classList.add('ring-2', 'ring-eco-green');
+                } else {
+                    alert('Energia insuficiente!');
+                }
+            });
+        });
+
+        document.getElementById('gameCanvas').addEventListener('click', (e) => {
+            if (!gameState.selectedDefense) return;
+            
+            const rect = e.target.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const defense = {
+                id: Date.now(),
+                x: x,
+                y: y,
+                type: gameState.selectedDefense.type,
+                icon: defenseTypes[gameState.selectedDefense.type].name,
+                ...defenseTypes[gameState.selectedDefense.type]
+            };
+            
+            gameState.defenses.push(defense);
+            gameState.energy -= gameState.selectedDefense.cost;
+            
+            createDefenseElement(defense);
+            
+            gameState.selectedDefense = null;
+            document.querySelectorAll('.defense-btn').forEach(b => b.classList.remove('ring-2', 'ring-eco-green'));
+            
+            updateGameUI();
+        });
+
+        // Game event listeners
+        document.getElementById('startGame').addEventListener('click', startGame);
+        document.getElementById('pauseGame').addEventListener('click', pauseGame);
+        document.getElementById('resetGame').addEventListener('click', resetGame);
+
+        // Quiz data and functionality
+        const quizQuestions = [
+            {
+                question: "Qual gás é considerado o principal responsável pelo efeito estufa?",
+                answers: ["CO₂ (Dióxido de Carbono)", "O₂ (Oxigênio)", "N₂ (Nitrogênio)", "H₂O (Vapor d'água)"],
+                correct: 0,
+                explanation: "O CO₂ é responsável por cerca de 76% das emissões de gases do efeito estufa."
+            },
+            {
+                question: "O que são CFCs e qual seu principal impacto ambiental?",
+                answers: [
+                    "Gases que causam chuva ácida",
+                    "Compostos que destroem a camada de ozônio",
+                    "Substâncias que aumentam a temperatura",
+                    "Elementos que purificam o ar"
+                ],
+                correct: 1,
+                explanation: "CFCs (Clorofluorcarbonos) destroem a camada de ozônio que nos protege da radiação UV."
+            },
+            {
+                question: "Qual reação química ocorre em um catalisador automotivo?",
+                answers: [
+                    "H₂O → H₂ + O₂",
+                    "2CO + O₂ → 2CO₂",
+                    "N₂ + O₂ → 2NO",
+                    "SO₂ + H₂O → H₂SO₃"
+                ],
+                correct: 1,
+                explanation: "Catalisadores convertem monóxido de carbono tóxico em dióxido de carbono menos nocivo."
+            },
+            {
+                question: "Qual é a principal causa da chuva ácida?",
+                answers: [
+                    "Excesso de CO₂ na atmosfera",
+                    "Óxidos de enxofre e nitrogênio",
+                    "Vapor d'água contaminado",
+                    "Radiação solar intensa"
+                ],
+                correct: 1,
+                explanation: "SOx e NOx reagem com água atmosférica formando ácidos que caem como chuva ácida."
+            },
+            {
+                question: "Que acordo internacional foi fundamental para controlar substâncias que destroem o ozônio?",
+                answers: [
+                    "Protocolo de Kyoto",
+                    "Acordo de Paris",
+                    "Protocolo de Montreal",
+                    "Convenção de Estocolmo"
+                ],
+                correct: 2,
+                explanation: "O Protocolo de Montreal (1987) foi crucial para eliminar CFCs e proteger a camada de ozônio."
+            },
+            {
+                question: "Qual processo químico as plantas usam para absorver CO₂?",
+                answers: [
+                    "Respiração celular",
+                    "Fotossíntese",
+                    "Fermentação",
+                    "Combustão"
+                ],
+                correct: 1,
+                explanation: "Na fotossíntese, plantas absorvem CO₂ e produzem O₂ usando energia solar."
+            },
+            {
+                question: "Qual é o pH aproximado da chuva ácida?",
+                answers: [
+                    "Menor que 5,6",
+                    "Exatamente 7,0",
+                    "Entre 7,0 e 8,0",
+                    "Maior que 9,0"
+                ],
+                correct: 0,
+                explanation: "Chuva normal tem pH ~5,6. Chuva ácida tem pH menor, chegando a 4,0 ou menos."
+            },
+            {
+                question: "Qual tecnologia emergente captura CO₂ diretamente do ar?",
+                answers: [
+                    "Filtros de partículas",
+                    "Captura Direta de Ar (DAC)",
+                    "Catalisadores automotivos",
+                    "Painéis solares"
+                ],
+                correct: 1,
+                explanation: "DAC (Direct Air Capture) são máquinas que sugam CO₂ diretamente da atmosfera."
+            },
+            {
+                question: "Qual substância pode neutralizar óxidos de enxofre (SOx)?",
+                answers: [
+                    "HCl (Ácido clorídrico)",
+                    "Ca(OH)₂ (Hidróxido de cálcio)",
+                    "CO₂ (Dióxido de carbono)",
+                    "CH₄ (Metano)"
+                ],
+                correct: 1,
+                explanation: "Bases como Ca(OH)₂ neutralizam ácidos formados por SOx: Ca(OH)₂ + SO₂ → CaSO₃ + H₂O"
+            },
+            {
+                question: "Qual é o objetivo principal do Acordo de Paris (2015)?",
+                answers: [
+                    "Eliminar todos os combustíveis fósseis",
+                    "Limitar aquecimento global a 1,5°C",
+                    "Banir produtos químicos industriais",
+                    "Criar uma moeda ambiental global"
+                ],
+                correct: 1,
+                explanation: "O Acordo de Paris busca limitar o aquecimento global a 1,5°C acima dos níveis pré-industriais."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let quizScore = 0;
+        let userAnswers = [];
+
+        function startQuiz() {
+            currentQuestion = 0;
+            quizScore = 0;
+            userAnswers = [];
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = quizQuestions[currentQuestion];
+            
+            document.getElementById('questionNumber').textContent = currentQuestion + 1;
+            document.getElementById('totalQuestions').textContent = quizQuestions.length;
+            document.getElementById('questionText').textContent = question.question;
+            document.getElementById('progressBar').style.width = `${((currentQuestion + 1) / quizQuestions.length) * 100}%`;
+            
+            const answersContainer = document.getElementById('answersContainer');
+            answersContainer.innerHTML = '';
+            
+            question.answers.forEach((answer, index) => {
+                const answerBtn = document.createElement('button');
+                answerBtn.className = 'w-full p-4 text-left bg-gray-100 dark:bg-gray-700 hover:bg-eco-green/20 rounded-lg transition-colors border-2 border-transparent';
+                answerBtn.textContent = `${String.fromCharCode(65 + index)}) ${answer}`;
+                answerBtn.addEventListener('click', () => selectAnswer(index, answerBtn));
+                answersContainer.appendChild(answerBtn);
+            });
+            
+            document.getElementById('prevQuestion').disabled = currentQuestion === 0;
+            document.getElementById('nextQuestion').disabled = true;
+        }
+
+        function selectAnswer(answerIndex, buttonElement) {
+            // Remove previous selections
+            document.querySelectorAll('#answersContainer button').forEach(btn => {
+                btn.classList.remove('border-eco-green', 'bg-eco-green/20');
+            });
+            
+            // Highlight selected answer
+            buttonElement.classList.add('border-eco-green', 'bg-eco-green/20');
+            
+            userAnswers[currentQuestion] = answerIndex;
+            document.getElementById('nextQuestion').disabled = false;
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < quizQuestions.length - 1) {
+                currentQuestion++;
+                showQuestion();
+            } else {
+                finishQuiz();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion();
+                
+                // Restore previous answer if exists
+                if (userAnswers[currentQuestion] !== undefined) {
+                    const buttons = document.querySelectorAll('#answersContainer button');
+                    buttons[userAnswers[currentQuestion]].classList.add('border-eco-green', 'bg-eco-green/20');
+                    document.getElementById('nextQuestion').disabled = false;
+                }
+            }
+        }
+
+        function finishQuiz() {
+            // Calculate score
+            quizScore = 0;
+            userAnswers.forEach((answer, index) => {
+                if (answer === quizQuestions[index].correct) {
+                    quizScore += 10;
+                }
+            });
+            
+            // Show results
+            document.getElementById('quizContainer').classList.add('hidden');
+            document.getElementById('quizResults').classList.remove('hidden');
+            
+            document.getElementById('finalScore').textContent = quizScore;
+            
+            let resultMessage = '';
+            let emoji = '';
+            let messageClass = '';
+            
+            if (quizScore >= 80) {
+                emoji = '🏆';
+                resultMessage = 'Excelente! Você é um verdadeiro Guardião da Atmosfera!';
+                messageClass = 'bg-eco-green/20 text-eco-green';
+            } else if (quizScore >= 60) {
+                emoji = '👍';
+                resultMessage = 'Muito bom! Continue estudando para se tornar um especialista.';
+                messageClass = 'bg-eco-blue/20 text-eco-blue';
+            } else if (quizScore >= 40) {
+                emoji = '📚';
+                resultMessage = 'Bom começo! Revise o conteúdo e tente novamente.';
+                messageClass = 'bg-yellow-600/20 text-yellow-600';
+            } else {
+                emoji = '💪';
+                resultMessage = 'Continue estudando! Todo especialista começou do básico.';
+                messageClass = 'bg-pollution-red/20 text-pollution-red';
+            }
+            
+            document.getElementById('resultEmoji').textContent = emoji;
+            document.getElementById('resultMessage').textContent = resultMessage;
+            document.getElementById('resultMessage').className = `text-lg mb-6 p-4 rounded ${messageClass}`;
+        }
+
+        function restartQuiz() {
+            document.getElementById('quizContainer').classList.remove('hidden');
+            document.getElementById('quizResults').classList.add('hidden');
+            startQuiz();
+        }
+
+        // Quiz event listeners
+        document.getElementById('nextQuestion').addEventListener('click', nextQuestion);
+        document.getElementById('prevQuestion').addEventListener('click', prevQuestion);
+        document.getElementById('restartQuiz').addEventListener('click', restartQuiz);
+
+        // Initialize quiz
+        startQuiz();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                
+                // Close mobile menu if open
+                document.getElementById('mobileMenu').classList.add('hidden');
+            });
+        });
+
+        // Initialize game UI
+        updateGameUI();
+    </script>
+</body>
+</html>
